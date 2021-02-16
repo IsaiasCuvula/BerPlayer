@@ -49,8 +49,7 @@ class MusicListFragment : Fragment(R.layout.fragment_music_list) {
         val sortOrder = " ${MediaStore.Audio.Media.DISPLAY_NAME} ASC"
 
         val cursor = activity?.applicationContext?.contentResolver!!.query(
-            allSongsURI,
-            null, selection, null, sortOrder
+            allSongsURI, null, selection, null, sortOrder
         )
 
         if (cursor != null) {

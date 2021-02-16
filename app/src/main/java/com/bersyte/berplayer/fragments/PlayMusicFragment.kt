@@ -55,7 +55,7 @@ class PlayMusicFragment : Fragment(R.layout.fragment_play_music) {
         val data = mmr.embeddedPicture
 
         if (data != null) {
-            val bitmap = BitmapFactory.decodeByteArray(data, 0, data!!.size)
+            val bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
             binding.ibCover.setImageBitmap(bitmap)
         }
 
@@ -114,7 +114,6 @@ class PlayMusicFragment : Fragment(R.layout.fragment_play_music) {
             }
         }
     }
-
 
     private fun playSong() {
 
