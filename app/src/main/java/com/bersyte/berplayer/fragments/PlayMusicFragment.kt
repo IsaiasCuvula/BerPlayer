@@ -187,8 +187,8 @@ class PlayMusicFragment : Fragment(R.layout.fragment_play_music) {
         })
     }
 
-    override fun onStop() {
-        super.onStop()
+
+    private fun clearMediaPlayer(){
         if (mMediaPlayer != null) {
             if (mMediaPlayer!!.isPlaying) {
                 mMediaPlayer!!.stop()
@@ -196,5 +196,15 @@ class PlayMusicFragment : Fragment(R.layout.fragment_play_music) {
             mMediaPlayer!!.release()
             mMediaPlayer = null
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        playSong()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        clearMediaPlayer()
     }
 }
