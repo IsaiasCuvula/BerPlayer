@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/musicListFragment">
+
+    <fragment
+        android:id="@+id/musicListFragment"
+        android:name="com.bersyte.berplayer.fragments.MusicListFragment"
+        android:label="fragment_music_list"
+        tools:layout="@layout/fragment_music_list">
+        <action
+            android:id="@+id/action_musicListFragment_to_playMusicFragment"
+            app:destination="@id/playMusicFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/playMusicFragment"
+        android:name="com.bersyte.berplayer.fragments.PlayMusicFragment"
+        android:label="fragment_play_music"
+        tools:layout="@layout/fragment_play_music">
+        <action
+            android:id="@+id/action_playMusicFragment_to_musicListFragment"
+            app:destination="@id/musicListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="song"
+            app:argType="com.bersyte.berplayer.model.Song"
+            app:nullable="true" />
+    </fragment>
+</navigation>
